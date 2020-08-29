@@ -38,10 +38,6 @@ function getJokes(e) {
         document.getElementById('result').innerHTML = `<h4>Chuck Norris Jokes.</h4>${output}`;
       }, timeout);
     }
-    setTimeout(() => {
-      loader.classList = 'row d-none'
-      document.getElementById('result').innerHTML = `Something went wrong`;
-    }, timeout);
   }
 
   xhr.send();
