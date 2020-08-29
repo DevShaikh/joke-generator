@@ -10,7 +10,7 @@ function getJokes(e) {
   
   const xhr = new XMLHttpRequest()
 
-  xhr.open('GET', `http://api.icndb.com/jokes/random/${number}`, true);
+  xhr.open('GET', `https://api.icndb.com/jokes/random/${number}`, true);
   
   xhr.onload = function() {
     if(this.status === 200) {
@@ -38,6 +38,10 @@ function getJokes(e) {
         document.getElementById('result').innerHTML = `<h4>Chuck Norris Jokes.</h4>${output}`;
       }, timeout);
     }
+    setTimeout(() => {
+      loader.classList = 'row d-none'
+      document.getElementById('result').innerHTML = `Something went wrong`;
+    }, timeout);
   }
 
   xhr.send();
